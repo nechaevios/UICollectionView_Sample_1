@@ -66,7 +66,7 @@ extension ViewController: UICollectionViewDataSource {
     }
 }
 
-// MARK: -- CollectionViewDelegate
+    // MARK: -- CollectionViewDelegate
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
     
@@ -112,5 +112,4 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         CGSize(width: 0, height: 80.0)
     }
-                
 }
