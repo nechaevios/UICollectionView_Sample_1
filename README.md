@@ -7,4 +7,4 @@
 - Custom header and footer
 
 ### Demo
-<img src="gif/demo.gif" style="width: 250px;" />
+<img src="demo/demo.gif" style="width: 250px;" />
