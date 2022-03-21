@@ -5,3 +5,6 @@
 - UICollectionViewFlowLayout
 - Custom cell
 - Custom header and footer
+
+### Demo
+<img src="gif/demo.gif" style="width: 250px;" />
