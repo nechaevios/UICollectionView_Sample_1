@@ -7,15 +7,23 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     weak var mainCollectionView: UICollectionView!
     
     //Define reuse identifiers for header and footer
-    let headerReuseIdentifier = "headerReuseIdentifier"
-    let footerReuseIdentifier = "footerReuseIdentifier"
+    private let headerReuseIdentifier = "headerReuseIdentifier"
+    private let footerReuseIdentifier = "footerReuseIdentifier"
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupCollection()
+        mainCollectionView.dataSource = self
+        mainCollectionView.delegate = self
+        mainCollectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: "CustomCell")
+    }
     
-    func setupCollection() {
+    private func setupCollection() {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -34,16 +42,9 @@ class ViewController: UIViewController {
         
         mainCollectionView = collectionView
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupCollection()
-        mainCollectionView.dataSource = self
-        mainCollectionView.delegate = self
-        mainCollectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: "CustomCell")
-        
-    }
 }
+
+// MARK: -- CollectionViewDataSource
 
 extension ViewController: UICollectionViewDataSource {
     
@@ -65,9 +66,7 @@ extension ViewController: UICollectionViewDataSource {
     }
 }
 
-extension ViewController: UICollectionViewDelegate {
-    
-}
+// MARK: -- CollectionViewDelegate
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
     
